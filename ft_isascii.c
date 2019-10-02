@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libft.h                                            :+:      :+:    :+:   */
+/*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/02 19:08:02 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/02 20:18:00 by mrouabeh         ###   ########.fr       */
+/*   Created: 2019/10/02 20:18:22 by mrouabeh          #+#    #+#             */
+/*   Updated: 2019/10/02 20:19:08 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIBFT_H
-#	define LIBFT_H
-
-int	ft_isdigit(int c);
-int	ft_isalpha(int c);
-int	ft_isalnum(int c);
-int	ft_isascii(int c);
-#endif
+int	ft_isascii(int c)
+{
+	if (0 <= c && c <= 127)
+		return (1);
+	return (0);
+}
