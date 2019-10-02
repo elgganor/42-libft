@@ -6,7 +6,7 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/10/02 19:06:15 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/10/02 19:15:48 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,3 +32,6 @@ fclean: clean
 re: fclean all
 
 .PHONY: clean fclean re
+
+exec: main.o $(NAME)
+	gcc main.o -L. -lft
