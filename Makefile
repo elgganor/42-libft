@@ -6,12 +6,12 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/10/02 18:55:55 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/10/02 19:06:15 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME= libft.a
-SRC=ft_isalpha.c ft_isdigit.c
+SRC=$(wildcard *.c)
 OBJ= $(SRC:.c=.o)
 FLAGS=-Wall -Wextra -Werror
 
