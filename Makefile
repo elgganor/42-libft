@@ -6,7 +6,7 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/10/02 19:36:35 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/10/03 09:48:28 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,14 +26,15 @@ $(NAME): $(OBJ)
 clean:
 	rm -f *.o
 
-fclean: clean
+fclean: clean eclean
 	rm -f $(NAME)
-
+	
 re: fclean all
 
 .PHONY: clean fclean eclean re
 
 exec: main.o $(NAME)
 	gcc -o main main.o -L. -lft
+
 eclean:
 	rm -f main
