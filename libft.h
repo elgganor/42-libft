@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/02 19:08:02 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/07 13:50:28 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/07 14:33:52 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,4 +32,6 @@ char	*ft_strrchr(const char *s, int c);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
 char	*ft_strdup(const char *s1);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
+char	*ft_strjoin(char const *s1, char const *s2);
+char	*ft_strtrim(char const *s1, char const *set);
 #endif
