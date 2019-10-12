@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:41:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/08 09:51:28 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/12 11:09:41 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	s = (char *)src;
 	d = (char *)dst;
 	i = 0;
+	if (!(tmp = (char *)malloc(sizeof(char) * len)))
+		return (dst);
 	while (s[i] != '\0' && i < len)
 	{
 		tmp[i] = s[i];
@@ -33,5 +35,6 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		d[i] = tmp[i];
 		i++;
 	}
+	free(tmp);
 	return (dst);
 }
