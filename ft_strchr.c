@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 10:54:28 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/06 19:25:53 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/14 15:08:28 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,5 +25,7 @@ char	*ft_strchr(const char *s, int c)
 		}
 		i++;
 	}
+	if (s[i] == c)
+		return ((char *)(s + i));
 	return (0);
 }
