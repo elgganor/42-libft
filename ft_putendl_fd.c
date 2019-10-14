@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/09 10:44:15 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/10 09:14:13 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/14 12:40:43 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,5 @@ void	ft_putendl_fd(char *s, int fd)
 {
 	while (*s)
 		ft_putchar_fd(*s++, fd);
-	ft_putchar_fd('\r', fd);
+	ft_putchar_fd('\n', fd);
 }
