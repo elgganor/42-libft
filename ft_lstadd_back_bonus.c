@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 10:20:55 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/14 10:32:28 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/14 12:03:54 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **alst, t_list *new)
 {
 	t_list	*last;
 
-	last = *head;
+	last = *alst;
 	new->next = NULL;
 	if ((*alst) == NULL)
 		(*alst) = new;

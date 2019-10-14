@@ -6,7 +6,7 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/10/14 10:03:15 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/10/14 12:02:44 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,19 @@ SRC=ft_putnbr.c ft_islower.c ft_isupper.c ft_abs.c ft_putchar.c ft_putstr.c ft_a
 
 OBJ= $(SRC:.c=.o)
 
+OBJ_BON= $(BONUS:.c=.o)
+
+BONUS=ft_lstadd_front_bonus.c ft_lstadd_back_bonus.c ft_lstdelone_bonus.c ft_lstclear_bonus.c ft_lstiter_bonus.c ft_lstmap_bonus.c ft_lstlast_bonus.c ft_lstnew_bonus.c ft_lstsize_bonus.c
+
 FLAGS=-Wall -Wextra -Werror
 
 
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(OBJ_BON)
 	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 .o: .c
 	gcc $(FLAGS) -I./ -o $@ -c $<
@@ -31,9 +36,12 @@ $(NAME): $(OBJ)
 clean:
 	rm -f $(OBJ)
 
-fclean: clean
+clean_b:
+	rm -f $(OBJ_BON)
+
+fclean: clean clean_b
 	rm -f $(NAME)
 	
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean clean_b fclean re
