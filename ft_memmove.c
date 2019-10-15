@@ -6,35 +6,36 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:41:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/15 11:55:33 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/15 14:16:29 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdio.h>
 
 void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	size_t	i;
-	char	*tmp;
-	char	*s;
-	char	*d;
+	t_uchar	*s;
+	t_uchar	*d;
 
-	s = (char *)src;
-	d = (char *)dst;
-	i = 0;
-	if (!(tmp = (char *)malloc(sizeof(char) * len)))
-		return (dst);
-	while (s[i] != '\0' && i < len)
+	s = (t_uchar *)src;
+	d = (t_uchar *)dst;
+	if (d > s)
 	{
-		tmp[i] = s[i];
-		i++;
+		while (0 < len)
+		{
+			d[len - 1] = s[len - 1];
+			len--;
+		}
 	}
-	i = 0;
-	while (i < len && d[i])
+	else
 	{
-		d[i] = tmp[i];
-		i++;
+		while (i < len)
+		{
+			d[i] = s[i];
+			i++;
+		}
 	}
-	free(tmp);
 	return (dst);
 }
