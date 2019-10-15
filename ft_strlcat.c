@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:12:26 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/09 16:24:40 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/15 17:44:44 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	len = ft_strlen(src);
 	len_d = ft_strlen(dst);
 	if (dstsize <= len_d)
-		len += dstsize;
+		return (len + dstsize);
 	else
 		len += len_d;
 	i = 0;
