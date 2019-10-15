@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:41:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/15 11:51:31 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/15 11:55:33 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 		i++;
 	}
 	i = 0;
-	while (i < len)
+	while (i < len && d[i])
 	{
 		d[i] = tmp[i];
 		i++;
