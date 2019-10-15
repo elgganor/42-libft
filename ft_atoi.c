@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 09:58:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/15 09:18:30 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/15 15:23:20 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 int	ft_atoi(const char *str)
 {
 	int	i;
-	long	sign;
-	long	res;
+	int	sign;
+	int	res;
 
 	sign = 1;
 	i = 0;
@@ -34,5 +34,5 @@ int	ft_atoi(const char *str)
 		res = res * 10 + (str[i] - '0');
 		i++;
 	}
-	return ((int)(res * sign));
+	return (res * sign);
 }
