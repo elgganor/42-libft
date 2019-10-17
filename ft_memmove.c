@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:41:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/15 14:26:49 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/17 12:45:50 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 	t_uchar	*s;
 	t_uchar	*d;
 
+	if (!dst || !src)
+		return (NULL);
 	s = (t_uchar *)src;
 	d = (t_uchar *)dst;
 	i = 0;
