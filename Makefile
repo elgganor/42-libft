@@ -6,7 +6,7 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/10/14 12:02:44 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/10/17 10:09:48 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,12 +26,16 @@ FLAGS=-Wall -Wextra -Werror
 
 all: $(NAME)
 
-$(NAME): $(OBJ) $(OBJ_BON)
+$(NAME): $(OBJ)
 	ar rc $(NAME) $^
 	ranlib $(NAME)
 
 .o: .c
 	gcc $(FLAGS) -I./ -o $@ -c $<
+
+bonus: $(OBJ) $(OBJ_BON)
+	ar rc $(NAME) $^
+	ranlib $(NAME)
 
 clean:
 	rm -f $(OBJ)
@@ -44,4 +48,4 @@ fclean: clean clean_b
 	
 re: fclean all
 
-.PHONY: all clean clean_b fclean re
+.PHONY: all bonus clean clean_b fclean re
