@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/06 18:05:36 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/06 18:15:31 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/17 14:16:44 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strdup(const char *s1)
 	char	*dest;
 
 	len = ft_strlen(s1);
-	if (!(dest = (char *)malloc((len + 1) * sizeof(char))))
+	if (!s1 || !(dest = (char *)malloc((len + 1) * sizeof(char))))
 	{
 		return (0);
 	}
