@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/03 09:58:42 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/17 12:13:40 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/17 12:32:06 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	ft_atoi(const char *str)
 	long	res;
 
 	if (!str)
-	    return (0);
+		return (0);
 	sign = 1;
 	i = 0;
 	while (str[i] == ' ' || (7 <= str[i] && str[i] <= 13))
