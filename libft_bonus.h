@@ -13,6 +13,7 @@
 #ifndef LIBFT_BONUS_H
 # define LIBFT_BONUS_H
 
+# include "libft.h"
 int		ft_lstsize(t_list *lst);
 void	ft_lstadd_front(t_list **alst, t_list *new);
 void	ft_lstadd_back(t_list **alst, t_list *new);
