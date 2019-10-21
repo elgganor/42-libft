@@ -11,19 +11,20 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_bonus.h"
 
 void	ft_lstadd_back(t_list **alst, t_list *new)
 {
-	t_list	*last;
+		t_list *last;
 
-	last = *alst;
-	new->next = NULL;
-	if ((*alst) == NULL)
-		(*alst) = new;
-	else
-	{
-		while (last->next != NULL)
-			last = last->next;
-		last->next = new;
-	}
+		last = *alst;
+		new->next = NULL;
+		if ((*alst) == NULL)
+			(*alst) = new;
+		else
+		{
+			while (last->next != NULL)
+				last = last->next;
+			last->next = new;
+		}
 }

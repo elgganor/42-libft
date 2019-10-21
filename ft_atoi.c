@@ -18,8 +18,6 @@ int	ft_atoi(const char *str)
 	long	sign;
 	long	res;
 
-	if (!str)
-		return (0);
 	sign = 1;
 	i = 0;
 	while (str[i] == ' ' || (7 <= str[i] && str[i] <= 13))

@@ -67,8 +67,8 @@ int	main(int ac, char **av)
 				printf("s1=NULL ,s2= str:%s\n", ft_strjoin(NULL, "hello world"));
 				printf("s1=NULL ,s2= '\\0':%s\n", ft_strjoin(NULL, ""));
 
-				printf("s1=str ,s2= :%s\n", ft_strjoin("hello world", NULL));
-				printf("s1= ,s2= :%s\n", ft_strjoin("", NULL));
+				printf("s1=str ,s2= NULL:%s\n", ft_strjoin("hello world", NULL));
+				printf("s1= '\\0',s2= NULL:%s\n", ft_strjoin("", NULL));
 
 				printf("s1= NULL,s2= NULL:%s\n", ft_strjoin(NULL, NULL));
 			}

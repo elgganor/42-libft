@@ -18,7 +18,7 @@ int	ft_memcmp(const void *s1, const void *s2, size_t n)
 	t_uchar	*src2;
 	size_t	i;
 
-	if (!s1 || !s2)
+	if (n == 0)
 		return (0);
 	src1 = (t_uchar *)s1;
 	src2 = (t_uchar *)s2;

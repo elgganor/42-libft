@@ -21,7 +21,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	s = (t_uchar *)src;
 	d = (t_uchar *)dst;
 	i = 0;
-	if (dst == NULL || src == NULL)
+	if (n == 0)
 		return (NULL);
 	while (i < n)
 	{

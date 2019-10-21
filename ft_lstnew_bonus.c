@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+#include "libft_bonus.h"
 
 t_list	*ft_lstnew(void *content)
 {
@@ -18,6 +19,8 @@ t_list	*ft_lstnew(void *content)
 	size_t	i;
 	t_list	*new_node;
 
+	if (!content)
+		return (NULL);
 	data_size = ft_strlen((char *)content);
 	if (!(new_node = (t_list *)malloc(sizeof(t_list))))
 		return (NULL);
