@@ -165,16 +165,16 @@ int	main(int ac, char **av)
 			{
 				printf("==== ft_strrchr ====\n");
 				printf("Real: %s\n", strrchr(av[2], atoi(av[3])));
-				printf("Mine: %s\n", ft_strchr(av[2], atoi(av[3])));
+				printf("Mine: %s\n", ft_strrchr(av[2], atoi(av[3])));
 			}
 			else
 			{
 				printf("==== ft_strrchr ====\n");
-				printf("s = NULL & c = 'c': %s\n", ft_strchr(NULL, 'c'));
-				printf("s = '\\0' & c = 'c': %s\n", ft_strchr("", 'c'));
-				printf("s = NULL & c = '\\0': %s\n", ft_strchr(NULL, '\0'));
-				printf("s = '\\0' & c = '\\0': %s\n", ft_strchr("", '\0'));
-				printf("s = av[2] & c = '\\0': %s\n", ft_strchr(av[2], '\0'));
+				printf("s = NULL & c = 'c': %s\n", ft_strrchr(NULL, 'c'));
+				printf("s = '\\0' & c = 'c': %s\n", ft_strrchr("", 'c'));
+				printf("s = NULL & c = '\\0': %s\n", ft_strrchr(NULL, '\0'));
+				printf("s = '\\0' & c = '\\0': %s\n", ft_strrchr("", '\0'));
+				printf("s = av[2] & c = '\\0': %s\n", ft_strrchr(av[2], '\0'));
 			}
 		}
 
@@ -345,8 +345,7 @@ int	main(int ac, char **av)
 				//cas n = 0
 				bzero(s1, atoi(av[2]));
 				ft_bzero(s2, atoi(av[2]));
-				printf("Real: %s\n", (char *)s1);
-				printf("Mine: %s\n", (char *)s2);
+				printf("Différence: %d\n", ft_memcmp(s1, s2, atoi(av[2])));
 				free(s1);
 				free(s2);
 			}
@@ -496,8 +495,29 @@ int	main(int ac, char **av)
 		if (strcmp(av[1], "ft_memcmp") == 0)
 		{
 			printf("==== ft_memcmp ====\n");
-			printf("Real: \n");
-			printf("Mine: \n");
+			if (ac == 5)
+			{
+				//cas n = 0
+				//cas n > size
+				printf("Real: %d\n", memcmp((void *)av[2], (void *)av[3], atoi(av[4])));
+				printf("Mine: %d\n", ft_memcmp((void *)av[2], (void *)av[3], atoi(av[4])));
+			}
+			else
+			{
+				printf("s1= NULL, s2= av[2]: %d\n", ft_memcmp(NULL, (void *)av[2], 10));
+				printf("s1= NULL, s2= '\\0': %d\n", ft_memcmp(NULL, "", 10));
+
+				printf("s1= NULL, s2= NULL: %d\n", ft_memcmp(NULL, NULL, 10));
+
+				printf("s1= av[2], s2= NULL: %d\n", ft_memcmp((void *)av[2], NULL, 10));
+				printf("s1= '\\0', s2= NULL: %d\n", ft_memcmp("", NULL, 10));
+
+				printf("s1= , s2= , n= : %d\n", ft_memcmp(NULL, "", 0));
+				printf("s1= , s2= , n= : %d\n", ft_memcmp("", NULL, 0));
+
+				printf("s1= NULL, s2= NULL, n= 0: %d\n", ft_memcmp(NULL, NULL, 0));
+			}
+			
 		}
 
 
@@ -505,8 +525,19 @@ int	main(int ac, char **av)
 		if (strcmp(av[1], "ft_calloc") == 0)
 		{
 			printf("==== ft_calloc ====\n");
-			printf("Real: \n");
-			printf("Mine: \n");
+			if (ac == 4)
+			{
+				void *s1;
+				void *s2;
+
+				// cas count = size = 0
+				s1 = calloc(atoi(av[2]), atoi(av[3]));
+				s2 = ft_calloc(atoi(av[2]), atoi(av[3]));
+				printf("Real: %s\n", s1);
+				printf("Mine: %s\n", s2);
+				free(s1);
+				free(s2);
+			}
 		}
 
 
@@ -514,8 +545,16 @@ int	main(int ac, char **av)
 		if (strcmp(av[1], "ft_strdup") == 0)
 		{
 			printf("==== ft_strdup ====\n");
-			printf("Real: \n");
-			printf("Mine: \n");
+			if (ac == 3)
+			{
+				printf("Real: %s\n", strdup(av[2]));
+				printf("Mine: %s\n", ft_strdup(av[2]));
+			}
+			else
+			{
+				printf("s= NULL: %s\n", ft_strdup(NULL));
+				printf("s= '\\0': %s\n", ft_strdup(""));
+			}
 		}
 	}
 }
