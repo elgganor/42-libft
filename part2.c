@@ -102,18 +102,68 @@ int	main(int ac, char **av)
 		if (strcmp(av[1], "ft_split") == 0)
 		{
 			printf("=== ft_split ===\n");
-			if (ac == 4)
+			if (ac == 3)
 			{
 				char **tab;
+				int	i;
 
 				// cas ""
 				// cas '\0'
-				tab = ft_split(av[2], (char)av[3]);
-				while (tab)
+				
+				printf("c = l\n");
+				i = 0;
+				tab = ft_split(av[2], 'l');
+				while (tab[i] != 0)
 				{
-					printf("%s\n", *tab);
-					tab++;
+					printf("%s\n", tab[i]);
+					i++;
 				}
+				printf("\n\n");
+				free(tab);
+
+				printf("c = '\\0'\n");
+				i = 0;
+				tab = ft_split(av[2], '\0');
+				while (tab[i] != 0)
+				{
+					printf("%s\n", tab[i]);
+					i++;
+				}
+				printf("\n\n");
+				free(tab);
+
+				printf("c = a\n");
+				i = 0;
+				tab = ft_split(av[2], 'a');
+				while (tab[i] != 0)
+				{
+					printf("%s\n", tab[i]);
+					i++;
+				}
+				printf("\n\n");
+				free(tab);
+
+				printf("c = 9\n");
+				i = 0;
+				tab = ft_split(av[2], '9');
+				while (tab[i] != 0)
+				{
+					printf("%s\n", tab[i]);
+					i++;
+				}
+				printf("\n\n");
+				free(tab);
+
+				printf("c = o\n");
+				i = 0;
+				tab = ft_split(av[2], 'o');
+				while (tab[i] != 0)
+				{
+					printf("%s\n", tab[i]);
+					i++;
+				}
+				printf("\n\n");
+				free(tab);
 			}
 			else
 			{
