@@ -220,6 +220,7 @@ int	main(int ac, char **av)
 			if (ac == 3)
 			{
 				// cas int max
+				// cas int min
 				printf("%s\n", ft_itoa(atoi(av[2])));
 			}
 		}
@@ -300,7 +301,7 @@ int	main(int ac, char **av)
 
 			if (ac == 3)
 			{
-				// cas ""
+				// cas int min et max
 				ft_putnbr_fd(atoi(av[2]), fd);
 			}
 			close(fd);
