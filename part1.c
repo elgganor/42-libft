@@ -105,13 +105,14 @@ int	main(int ac, char **av)
 			printf("==== ft_atoi ====\n");
 			if (ac == 3)
 			{
+				// cas int max
 				printf("Real: %d\n", atoi(av[2]));
 				printf("Mine: %d\n", ft_atoi(av[2]));
 			}
 			else
 			{
-				printf("NULL: %d\n", ft_atoi(NULL));
-				printf("NULL: %d\n", atoi(NULL));
+				// printf("NULL: %d\n", ft_atoi(NULL));
+				// printf("NULL: %d\n", atoi(NULL));
 
 				printf("'\\0': %d\n", ft_atoi(""));
 				printf("'\\0': %d\n", atoi(""));
@@ -340,7 +341,7 @@ int	main(int ac, char **av)
 				// printf("dst = NULL, src = NULL, n =  0: %lu\n", ft_strlcat(NULL, NULL, 0));
 				// printf("dst = NULL, src = NULL, n =  0: %lu\n", strlcat(NULL, NULL, 0));
 				
-				// printf("dst = NULL, src = '\\0', n =  0: %lu\n", ft_strlcat(NULL, "", 0));
+				printf("dst = NULL, src = '\\0', n =  0: %lu\n", ft_strlcat(NULL, "", 0));
 				printf("dst = NULL, src = '\\0', n =  0: %lu\n", strlcat(NULL, "", 0));
 
 				// printf("dst = '\\0', src = NULL, n =  0: %lu\n", ft_strlcat("", NULL, 0));
@@ -365,7 +366,7 @@ int	main(int ac, char **av)
 				// printf("src= NULL, sub= av[2]: %s\n", ft_strnstr(NULL, av[2], 5));
 				// printf("src= NULL, sub= av[2]: %s\n", strnstr(NULL, av[2], 5));
 
-				// printf("src= NULL, sub= av[2]: %s\n", ft_strnstr(NULL, "", 5));
+				printf("src= NULL, sub= av[2]: %s\n", ft_strnstr(NULL, "", 5));
 				printf("src= NULL, sub= av[2]: %s\n", strnstr(NULL, "", 5));
 
 
@@ -376,17 +377,17 @@ int	main(int ac, char **av)
 				// printf("src= NULL, sub= av[2]: %s\n", ft_strnstr(av[2], NULL, 5));
 				// printf("src= NULL, sub= av[2]: %s\n", strnstr(av[2], NULL, 5));
 
-				printf("src= NULL, sub= av[2]: %s\n", ft_strnstr("", NULL, 5));
+				// printf("src= NULL, sub= av[2]: %s\n", ft_strnstr("", NULL, 5));
 				// printf("src= NULL, sub= av[2]: %s\n", strnstr("", NULL, 5));
 
 
 				// printf("dst = NULL, src = NULL, n =  0: %s\n", ft_strnstr(NULL, NULL, 0));
 				// printf("dst = NULL, src = NULL, n =  0: %s\n", strnstr(NULL, NULL, 0));
 
-				// printf("dst = NULL, src = '\\0', n =  0: %s\n", ft_strnstr(NULL, "", 0));
+				printf("dst = NULL, src = '\\0', n =  0: %s\n", ft_strnstr(NULL, "", 0));
 				printf("dst = NULL, src = '\\0', n =  0: %s\n", strnstr(NULL, "", 0));
 
-				printf("dst = '\\0', src = NULL, n =  0: %s\n", ft_strnstr("", NULL, 0));
+				// printf("dst = '\\0', src = NULL, n =  0: %s\n", ft_strnstr("", NULL, 0));
 				// printf("dst = '\\0', src = NULL, n =  0: %s\n", strnstr("", NULL, 0));
 			}
 		}
