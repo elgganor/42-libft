@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:59:05 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/17 14:15:14 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/22 12:05:46 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ char			**ft_split(const char *s, char c)
 	if (!s)
 		return (0);
 	nb_word = ft_count_word(s, c);
-	if (!s || !(res = (char **)malloc((nb_word + 1) * sizeof(char *))))
+	if (!(res = (char **)malloc((nb_word + 1) * sizeof(char *))))
 		return (0);
 	i = 0;
 	j = 0;

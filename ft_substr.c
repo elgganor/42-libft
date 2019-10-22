@@ -17,10 +17,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	char	*dest;
 	size_t	i;
 
+	if (!s)
+		return (0);
 	i = 0;
 	if (ft_strlen(s) < start)
 		len = 0;
-	if (!s || !(dest = (char *)malloc(sizeof(char) * (len + 1))))
+	if (!(dest = (char *)malloc(sizeof(char) * (len + 1))))
 		return (0);
 	while (i < len && s[start] != '\0')
 	{

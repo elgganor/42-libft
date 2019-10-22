@@ -19,10 +19,11 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	char	*dest;
 	int		i;
 
+	if (!s1 || !s2)
+		return (0);
 	lens1 = ft_strlen(s1);
 	lens2 = ft_strlen(s2);
-	if (!s1 || !s2
-		|| !(dest = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1))))
+	if (!(dest = (char *)malloc(sizeof(char) * (lens1 + lens2 + 1))))
 		return (0);
 	i = 0;
 	while (s1[i] != '\0')

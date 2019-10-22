@@ -48,7 +48,14 @@ int	main(int ac, char **av)
 				// cas len > size
 				// cas len < 0
 				printf("s= NULL: %s\n", ft_substr(NULL, atoi(av[2]), atoi(av[3])));
+				printf("s= NULL: %s\n", ft_substr(NULL, 0, atoi(av[3])));
+				printf("s= NULL: %s\n", ft_substr(NULL, atoi(av[2]), 0));
+				printf("s= NULL: %s\n", ft_substr(NULL, 0, 0));
+
 				printf("s= '\\0': %s\n", ft_substr("", atoi(av[2]), atoi(av[3])));
+				printf("s= '\\0': %s\n", ft_substr("", 0, atoi(av[3])));
+				printf("s= '\\0': %s\n", ft_substr("", atoi(av[2]), 0));
+				printf("s= '\\0': %s\n", ft_substr("", 0, 0));
 			}
 		}
 
@@ -87,10 +94,10 @@ int	main(int ac, char **av)
 			}
 			else
 			{
-				printf("s= NULL,set= set: %s\n", ft_strtrim(NULL, av[2]));
+				printf("s= NULL,set= set: %s\n", ft_strtrim(NULL, " +,"));
 				printf("s= NULL,set= '\\0': %s\n", ft_strtrim(NULL, ""));
 				
-				printf("s= str,set= NULL: %s\n", ft_strtrim(av[2], NULL));
+				printf("s= str,set= NULL: %s\n", ft_strtrim("  Hello world  ", NULL));
 				printf("s= '\\0',set= NULL: %s\n", ft_strtrim("", NULL));
 
 				printf("s= NULL,set= NULL: %s\n", ft_strtrim(NULL, NULL));
@@ -105,64 +112,90 @@ int	main(int ac, char **av)
 			if (ac == 3)
 			{
 				char **tab;
+				char *str = "Foo Bar Baz";
 				int	i;
 
 				// cas ""
 				// cas '\0'
 				
-				printf("c = l\n");
+				printf("str= str, c = ' '\n");
+				tab = ft_split(str, ' ');
 				i = 0;
-				tab = ft_split(av[2], 'l');
 				while (tab[i] != 0)
 				{
-					printf("%s\n", tab[i]);
+					printf("%d => %s\n", i, tab[i]);
 					i++;
 				}
-				printf("\n\n");
 				free(tab);
 
-				printf("c = '\\0'\n");
+				printf("str= str, c = 'a'\n");
+				tab = ft_split(str, 'a');
 				i = 0;
-				tab = ft_split(av[2], '\0');
 				while (tab[i] != 0)
 				{
-					printf("%s\n", tab[i]);
+					printf("%d => %s\n", i, tab[i]);
 					i++;
 				}
-				printf("\n\n");
 				free(tab);
 
-				printf("c = a\n");
+				printf("str= str, c = 'l'\n");
+				tab = ft_split(str, 'l');
 				i = 0;
-				tab = ft_split(av[2], 'a');
 				while (tab[i] != 0)
 				{
-					printf("%s\n", tab[i]);
+					printf("%d => %s\n", i, tab[i]);
 					i++;
 				}
-				printf("\n\n");
 				free(tab);
 
-				printf("c = 9\n");
+				printf("str= str, c = '\\0'\n");
+				tab = ft_split(str, '\0');
 				i = 0;
-				tab = ft_split(av[2], '9');
 				while (tab[i] != 0)
 				{
-					printf("%s\n", tab[i]);
+					printf("%d => %s\n", i, tab[i]);
 					i++;
 				}
-				printf("\n\n");
 				free(tab);
 
-				printf("c = o\n");
+				printf("str= '', c = ' '\n");
+				tab = ft_split("", ' ');
 				i = 0;
-				tab = ft_split(av[2], 'o');
 				while (tab[i] != 0)
 				{
-					printf("%s\n", tab[i]);
+					printf("%d => %s\n", i, tab[i]);
 					i++;
 				}
-				printf("\n\n");
+				free(tab);
+
+				printf("str= '', c = 'a'\n");
+				tab = ft_split("", 'a');
+				i = 0;
+				while (tab[i] != 0)
+				{
+					printf("%d => %s\n", i, tab[i]);
+					i++;
+				}
+				free(tab);
+
+				printf("str= '', c = 'l'\n");
+				tab = ft_split("", 'l');
+				i = 0;
+				while (tab[i] != 0)
+				{
+					printf("%d => %s\n", i, tab[i]);
+					i++;
+				}
+				free(tab);
+
+				printf("str= '', c = '\\0'\n");
+				tab = ft_split("", '\0');
+				i = 0;
+				while (tab[i] != 0)
+				{
+					printf("%d => %s\n", i, tab[i]);
+					i++;
+				}
 				free(tab);
 			}
 			else
@@ -175,6 +208,7 @@ int	main(int ac, char **av)
 					printf("%s\n", *tab);
 					tab++;
 				}
+				free(tab);
 			}
 		}
 
@@ -185,6 +219,7 @@ int	main(int ac, char **av)
 			printf("=== ft_itoa ===\n");
 			if (ac == 3)
 			{
+				// cas int max
 				printf("%s\n", ft_itoa(atoi(av[2])));
 			}
 		}
@@ -201,6 +236,7 @@ int	main(int ac, char **av)
 			else
 			{
 				printf("%s\n", ft_strmapi(NULL, &myMap));
+				printf("%s\n", ft_strmapi("", &myMap));
 			}
 		}
 
@@ -225,12 +261,12 @@ int	main(int ac, char **av)
 
 			if (ac == 3)
 			{
-				// cas ""
 				ft_putstr_fd(av[2], fd);
 			}
 			else
 			{
 				ft_putstr_fd(NULL, fd);
+				ft_putstr_fd("", fd);
 			}
 			close(fd);
 		}
@@ -244,12 +280,12 @@ int	main(int ac, char **av)
 
 			if (ac == 3)
 			{
-				// cas ""
 				ft_putendl_fd(av[2], fd);
 			}
 			else
 			{
 				ft_putendl_fd(NULL, fd);
+				ft_putendl_fd("", fd);
 			}
 			close(fd);
 		}
