@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/14 10:04:56 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/14 10:07:14 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/22 17:45:31 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 void	ft_lstadd_front(t_list **alst, t_list *new)
 {
-		new->next = (*alst);
-		(*alst) = new;
+	new->next = (*alst);
+	(*alst) = new;
 }
