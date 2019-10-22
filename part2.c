@@ -247,8 +247,9 @@ int	main(int ac, char **av)
 			printf("=== ft_putchar_fd ===\n");
 			int fd = open("file_c.txt", O_CREAT | O_RDWR);
 
-			ft_putchar_fd('c', fd);
-			ft_putchar_fd('\0', fd);
+			ft_putchar_fd('6', fd);
+			ft_putchar_fd('\n', fd);
+
 			close(fd);
 		}
 
