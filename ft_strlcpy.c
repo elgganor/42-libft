@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 12:12:15 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/15 17:02:10 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/22 09:20:16 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,6 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	size_t i;
 	size_t len;
 
-	// if (!dst || !src)
-	// 	return (0);
 	i = 0;
 	len = ft_strlen(src);
 	if (dstsize == 0)
