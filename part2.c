@@ -158,6 +158,8 @@ int	main(int ac, char **av)
 				}
 				free(tab);
 
+
+
 				printf("str= '', c = ' '\n");
 				tab = ft_split("", ' ');
 				i = 0;
@@ -181,7 +183,7 @@ int	main(int ac, char **av)
 				printf("str= '', c = 'l'\n");
 				tab = ft_split("", 'l');
 				i = 0;
-				while (tab[i] != 0)
+				while (tab[i] != NULL)
 				{
 					printf("%d => %s\n", i, tab[i]);
 					i++;
