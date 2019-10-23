@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 09:54:36 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/09 17:55:14 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/23 11:40:22 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,7 @@
 void	*ft_calloc(size_t count, size_t size)
 {
 	void	*dest;
-	size_t	i;
 
-	i = 0;
 	if (count * size == 0)
 	{
 		count = 1;
