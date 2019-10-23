@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 10:08:41 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/21 10:08:43 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/23 11:45:03 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,89 +109,15 @@ int	main(int ac, char **av)
 		if (strcmp(av[1], "ft_split") == 0)
 		{
 			printf("=== ft_split ===\n");
-			if (ac == 3)
+			if (ac == 4)
 			{
 				char **tab;
-				char *str = "Foo Bar Baz";
 				int	i;
 
 				// cas ""
 				// cas '\0'
 				
-				printf("str= str, c = ' '\n");
-				tab = ft_split(str, ' ');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= str, c = 'a'\n");
-				tab = ft_split(str, 'a');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= str, c = 'l'\n");
-				tab = ft_split(str, 'l');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= str, c = '\\0'\n");
-				tab = ft_split(str, '\0');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-
-
-				printf("str= '', c = ' '\n");
-				tab = ft_split("", ' ');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= '', c = 'a'\n");
-				tab = ft_split("", 'a');
-				i = 0;
-				while (tab[i] != 0)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= '', c = 'l'\n");
-				tab = ft_split("", 'l');
-				i = 0;
-				while (tab[i] != NULL)
-				{
-					printf("%d => %s\n", i, tab[i]);
-					i++;
-				}
-				free(tab);
-
-				printf("str= '', c = '\\0'\n");
-				tab = ft_split("", '\0');
+				tab = ft_split(av[2], *av[3]);
 				i = 0;
 				while (tab[i] != 0)
 				{
