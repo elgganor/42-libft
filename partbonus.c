@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-#include "libft_bonus.h"
 #include <stdio.h>
 
 // Fonctions d'affichage
