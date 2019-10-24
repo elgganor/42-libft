@@ -715,8 +715,12 @@ int	main(int ac, char **av)
 				// cas count = size = 0
 				s1 = calloc(atoi(av[2]), atoi(av[3]));
 				s2 = ft_calloc(atoi(av[2]), atoi(av[3]));
+				memmove(s1, av[4], atoi(av[3]) * atoi(av[2]));
+				memmove(s2, av[4], atoi(av[3]) * atoi(av[2]));
 				printf("Real: %s\n", s1);
+				printf("Real: %zu\n", ft_strlen(s1));
 				printf("Mine: %s\n", s2);
+				printf("Mine: %zu\n", ft_strlen(s2));
 				free(s1);
 				free(s2);
 			}
