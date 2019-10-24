@@ -33,8 +33,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 	char	*sub;
 	char	*dest;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (set == 0)
+		return ((char *)s1);
 	len = ft_strlen(s1);
 	i = 0;
 	while (ft_isset(s1[i], set) == 1)
