@@ -50,6 +50,12 @@ static size_t	ft_get_len_word(const char *s, int index, char c)
 	return (len_word);
 }
 
+static void 	free_tab(char **tab, int j)
+{
+	while (j-- >= 0)
+		free(tab[j]);
+}
+
 char			**ft_split(const char *s, char c)
 {
 	char	**res;
@@ -68,7 +74,8 @@ char			**ft_split(const char *s, char c)
 			i++;
 		if (s[i] != '\0' && s[i] != c)
 		{
-			res[j] = ft_substr(s, i, ft_get_len_word(s, i, c));
+			if (!(res[j] = ft_substr(s, i, ft_get_len_word(s, i, c))))
+				free_tab(res,j);
 			j++;
 			while (s[i] != '\0' && s[i] != c)
 				i++;
