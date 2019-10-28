@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:32:52 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/28 09:40:51 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/28 12:16:47 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ char		*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	len;
 	size_t	i;
-	char	*sub;
 	char	*dest;
 
 	if (!s1 || !set)
@@ -41,12 +40,9 @@ char		*ft_strtrim(char const *s1, char const *set)
 		i++;
 	if (s1[i] == '\0')
 		return (ft_strdup(""));
-	if (!(sub = ft_substr(s1, i, len - i)))
-		return (NULL);
-	len = ft_strlen(sub);
-	while (ft_isset(sub[len - 1], set) == 1)
+	while (ft_isset(s1[len - 1], set) == 1)
 		len--;
-	if (!(dest = ft_substr(sub, 0, len)))
+	if (!(dest = ft_substr(s1, i, len - i)))
 		return (NULL);
 	return (dest);
 }
