@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/08 11:59:05 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/28 09:10:18 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/28 16:02:32 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,10 +50,12 @@ static size_t	ft_get_len_word(const char *s, int index, char c)
 	return (len_word);
 }
 
-static void		free_tab(char **tab, int j)
+static char		**free_tab(char **tab, int j)
 {
 	while (j-- >= 0)
 		free(tab[j]);
+	free(tab);
+	return (NULL);
 }
 
 char			**ft_split(const char *s, char c)
@@ -75,7 +77,7 @@ char			**ft_split(const char *s, char c)
 		if (s[i] != '\0' && s[i] != c)
 		{
 			if (!(res[j] = ft_substr(s, i, ft_get_len_word(s, i, c))))
-				free_tab(res, j);
+				return (free_tab(res, j));
 			j++;
 			while (s[i] != '\0' && s[i] != c)
 				i++;
