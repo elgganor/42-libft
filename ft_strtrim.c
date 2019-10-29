@@ -6,7 +6,7 @@
 /*   By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/07 14:32:52 by mrouabeh          #+#    #+#             */
-/*   Updated: 2019/10/28 12:16:47 by mrouabeh         ###   ########.fr       */
+/*   Updated: 2019/10/29 11:32:37 by mrouabeh         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,10 @@ char		*ft_strtrim(char const *s1, char const *set)
 	size_t	i;
 	char	*dest;
 
-	if (!s1 || !set)
+	if (!s1)
 		return (NULL);
+	if (!set)
+		return (ft_strdup(s1));
 	len = ft_strlen(s1);
 	i = 0;
 	while (ft_isset(s1[i], set) == 1)
