@@ -6,7 +6,7 @@
 #    By: mrouabeh <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/10/02 18:06:58 by mrouabeh          #+#    #+#              #
-#    Updated: 2019/12/03 15:45:01 by mrouabeh         ###   ########.fr        #
+#    Updated: 2019/12/05 13:52:40 by mrouabeh         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -59,8 +59,10 @@ STRING=./string/ft_split.c \
 	./string/ft_strtrim.c \
 	./string/ft_substr.c \
 	./string/ft_strcmp.c 
+GNL=./get_next_line/get_next_line.c \
+	./get_next_line/get_next_line_utils.c
 
-SRC=$(DISPLAY) $(CHECKER) $(CONVERT) $(MEMORY) $(STRING)
+SRC=$(DISPLAY) $(CHECKER) $(CONVERT) $(MEMORY) $(STRING) $(GNL)
 
 OBJ= $(SRC:.c=.o)
 
