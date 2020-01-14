@@ -59,14 +59,8 @@ STRING=./string/ft_split.c \
 	./string/ft_strtrim.c \
 	./string/ft_substr.c \
 	./string/ft_strcmp.c 
-GNL=./get_next_line/get_next_line.c \
-	./get_next_line/get_next_line_utils.c
-
-SRC=$(DISPLAY) $(CHECKER) $(CONVERT) $(MEMORY) $(STRING) $(GNL)
-
-OBJ= $(SRC:.c=.o)
-
-BONUS=./linked_list/ft_lstadd_front_bonus.c \
+GNL=./get_next_line/get_next_line.c
+LINKED_LIST=./linked_list/ft_lstadd_front_bonus.c \
 	./linked_list/ft_lstadd_back_bonus.c \
 	./linked_list/ft_lstdelone_bonus.c \
 	./linked_list/ft_lstclear_bonus.c \
@@ -76,9 +70,13 @@ BONUS=./linked_list/ft_lstadd_front_bonus.c \
 	./linked_list/ft_lstnew_bonus.c \
 	./linked_list/ft_lstsize_bonus.c
 
-OBJ_BON= $(BONUS:.c=.o)
+
+SRC=$(DISPLAY) $(CHECKER) $(CONVERT) $(MEMORY) $(STRING) $(GNL) $(LINKED_LIST)
+
+OBJ= $(SRC:.c=.o)
 
 FLAGS=-Wall -Wextra -Werror
+./get_next_line/get_next_line.o: FLAGS += -D BUFFER_SIZE=32
 
 
 
@@ -88,22 +86,15 @@ $(NAME): $(OBJ)
 	ar rc $(NAME) $^
 	ranlib $(NAME)
 
-.o: .c
-	gcc $(FLAGS) -I./ -o $@ -c $<
-
-bonus: $(OBJ) $(OBJ_BON)
-	ar rc $(NAME) $^
-	ranlib $(NAME)
+%.o: %.c
+	gcc $(FLAGS) -o $@ -c $<
 
 clean:
 	rm -f $(OBJ)
 
-clean_b:
-	rm -f $(OBJ_BON)
-
-fclean: clean clean_b
+fclean: clean
 	rm -f $(NAME)
 	
 re: fclean all
 
-.PHONY: all bonus clean clean_b fclean re
+.PHONY: all bonus clean fclean re
