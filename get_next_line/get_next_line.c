@@ -12,6 +12,26 @@
 
 #include "get_next_line.h"
 
+void ft_strjoin_free(char **str, char *buf)
+{
+	char *tmp;
+
+	if (*str == NULL)
+		*str = ft_strdup(buf);
+	else if (**str == '\0')
+	{
+		free(*str);
+		*str = ft_strdup(buf);
+	}
+	else
+	{
+		tmp = ft_strdup(*str);
+		free(*str);
+		*str = ft_strjoin(tmp, buf);
+		free(tmp);
+	}
+}
+
 int		check_error(int fd, char **line)
 {
 	if (fd < 0 || !line || BUFFER_SIZE < 1)

@@ -20,6 +20,7 @@ long	ft_atol(char *str)
 
 	i = 0;
 	sign = 1;
+	res = 0;
 	if (str)
 	{
 		while (str[i] == ' ' || str[i] == '\t' || str[i] == '\v' ||
@@ -31,7 +32,6 @@ long	ft_atol(char *str)
 				sign = -1;
 			i++;
 		}
-		res = 0;
 		while (str[i] != '\0' && ft_isdigit(str[i]))
 		{
 			res = res * 10 + (str[i] - '0');
