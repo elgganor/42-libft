@@ -4,13 +4,8 @@ Librairie de fonction usuelles en C pour les prochains projets de l'école 42.
 
 ## Table of content
 
-* [Prerequisites](#Prerequisites)
-* [Installation](#Installation)
 * [Usage](#Usage)
 * [Technologies](#Technologies)
-* [Features](#Features)
-* [Support](#Support)
-* [Contributing](#Contributing)
 
 ## Getting Started
 
